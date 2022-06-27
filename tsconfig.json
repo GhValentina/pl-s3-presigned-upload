@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "sourceMap": true,
+    "allowJs": true,
+    "outDir": ".build",
+    "rootDir": "./",
+    "lib": [
+      "dom",
+      "es7",
+      "es2017"
+    ]
+  },
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "node_modules/**/*",
+    "**/*.spec.ts"
+  ]
+}

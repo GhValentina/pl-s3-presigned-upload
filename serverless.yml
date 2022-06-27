@@ -1,0 +1,23 @@
+service: get-url
+app: presigned-upload
+org: perfectlive
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  environment:
+    BUCKET_NAME: ${param:BUCKET_NAME}
+    REGION: ${param:REGION}
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+
+functions:
+  getPresignedPostData:
+    handler: handler.getPreSignedURLToPostS3
+    events:
+      - http:
+          path: get-presigned-url
+          method: post
+          cors: true
