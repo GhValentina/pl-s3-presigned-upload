@@ -2,6 +2,7 @@ service: get-url
 app: presigned-upload
 org: perfectlive
 
+# AWS provider and env vars
 provider:
   name: aws
   runtime: nodejs16.x
@@ -9,10 +10,12 @@ provider:
     BUCKET_NAME: ${param:BUCKET_NAME}
     REGION: ${param:REGION}
 
+# SLS plugins
 plugins:
   - serverless-offline
   - serverless-plugin-typescript
 
+# SLS lambda function
 functions:
   getPresignedPostData:
     handler: handler.getPreSignedURLToPostS3
